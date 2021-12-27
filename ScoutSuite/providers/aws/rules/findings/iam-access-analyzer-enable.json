@@ -1,0 +1,31 @@
+{
+    "description": "Enable IAM Access analyzer for IAM policies about all resources in each region",
+    "rationale": "Access Analyzer identifies resources that are shared with external principals by using logic-based reasoning to analyze the resource-based policies in your AWS environment.",
+    "remediation": "Enable IAM Access analyzer lets you identify unintended access to your resources and data.",
+    "compliance": [
+        {
+            "name": "CIS Amazon Web Services Foundations",
+            "version": "1.4.0",
+            "reference": "1.20"
+        }
+    ],
+    "references": [
+        "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html",
+        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html",
+        "https://docs.aws.amazon.com/cli/latest/reference/accessanalyzer/get-analyzer.html",
+        "https://docs.aws.amazon.com/cli/latest/reference/accessanalyzer/create-analyzer.html"
+    ],
+    "dashboard_name": "Server Certificates",
+    "path": "iam.server_certificates.id",
+    "conditions": [
+        "and",
+        [
+            "iam.server_certificates.id.expiration",
+            "newerThan",
+            [
+                "0",
+                "days"
+            ]
+        ]
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "description": "User attached policies with Inline Policies or Managed Policies directly",
+    "rationale": "Assigning IAM policy only through groups simplifies permissions management to a single, flexible layer consistent with organizational functional roles. By simplifying permissions management, the likelihood of excessive permissions is reduced.",
+    "remediation": "Ensure IAM Users Receive Permissions Only Through Groups",
+    "compliance": [
+        {
+            "name": "CIS Amazon Web Services Foundations",
+            "version": "1.4.0",
+            "reference": "1.15"
+        }
+    ],
+    "references": [
+        "https://docs.aws.amazon.com/config/latest/developerguide/operational-best-practices-for-cis_aws_benchmark_level_1.html"
+    ],
+    "dashboard_name": "Users",
+    "path": "iam.users.id",
+    "conditions": [
+        "and",
+        [
+            "iam.users.id.",
+            "withKey",
+            "_ARG_1_"
+        ],
+        [
+            "iam.users.id._ARG_1_",
+            "notEmpty",
+            ""
+        ]
+    ],
+    "key": "iam-user-with-_ARG_0_-policies",
+    "arg_names": [
+        "Type of policy",
+        "Path to policies"
+    ],
+    "id_suffix": "_ARG_1_"
+}

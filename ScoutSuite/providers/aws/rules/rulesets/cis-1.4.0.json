@@ -1,0 +1,143 @@
+{
+  "about": "This ruleset covers part of the recommendations from the CIS Amazon Web Services Foundation v1.4.0.",
+  "rules": {
+      "iam-root-account-with-active-keys.json": [
+        {
+            "comment": "Recommendation 1.4",
+            "enabled": true,
+            "level": "danger",
+            "scored": true
+        }
+      ],   
+      "iam-root-account-no-mfa.json": [
+        {
+            "comment": "Recommendation 1.5",
+            "enabled": true,
+            "level": "danger",
+            "scored": true
+        }
+      ],
+      "iam-root-account-no-hardware-mfa.json": [
+        {
+            "comment": "Recommendation 1.6",
+            "enabled": true,
+            "level": "danger",
+            "scored": true
+        }
+      ],
+      "iam-root-account-used-recently.json": [
+        {
+            "comment": "Recommendation 1.7",
+            "enabled": true,
+            "level": "danger",
+            "scored": true
+        }
+      ],
+      "iam-password-policy-minimum-length.json": [
+          {
+              "args": [
+                  "14"
+              ],
+              "comment": "Recommendation 1.8",
+              "enabled": true,
+              "level": "danger",
+              "scored": true
+          }
+      ],
+      "iam-password-policy-reuse-enabled.json": [
+        {
+            "comment": "Recommendation 1.9",
+            "enabled": true,
+            "level": "danger",
+            "scored": true
+        }
+      ],
+      "iam-user-without-mfa.json": [
+        {
+            "comment": "Recommendation 1.10",
+            "enabled": true,
+            "level": "danger",
+            "scored": true
+        }
+      ],
+      "iam-user-unused-access-key-initial-setup.json": [
+        {
+            "comment": "Recommendation 1.11",
+            "enabled": true,
+            "level": "warning",
+            "scored": false
+        }
+      ],
+      "iam-unused-credentials-not-disabled.json": [
+        {
+            "args": [
+                "45"
+            ],
+            "comment": "Recommendation 1.12",
+            "enabled": true,
+            "level": "danger",
+            "scored": true
+        }
+      ],
+      "iam-user-with-multiple-access-keys.json": [
+        {
+          "comment": "Recommendation 1.13",
+          "enabled": true,
+          "level": "danger",
+          "scored": true
+        }
+      ],
+      "iam-user-no-key-rotation.json": [
+        {
+            "args": [
+                "Active",
+                "90"
+            ],
+            "comment": "Recommendation 1.14",
+            "enabled": true,
+            "level": "danger",
+            "scored": true
+        }
+      ],
+      "iam-user-permission-only-from-groups.json": [
+        {
+          "comment":"Recommendation 1.15",
+          "enabled": true,
+          "level": "warning",
+          "scored": true
+        }
+      ],
+      "iam-managed-policy-allows-full-privileges.json": [
+        {
+            "comment": "Recommendation 1.16",
+            "enabled": true,
+            "level": "danger",
+            "scored": true
+        }
+      ],
+      "iam-no-support-role.json": [
+        {
+            "comment": "Recommendation 1.17",
+            "enabled": true,
+            "level": "danger",
+            "scored": true
+        }
+      ],
+      "iam-server-certificates-not-expired.json": [
+          {
+              "comment": "Recommendation 1.19",
+              "enabled": true,
+              "level": "danger",
+              "scored": true
+          }
+      ],
+      "iam-access-analyzer-enable.json": [
+        {
+            "comment": "Recommendation 1.19",
+            "enabled": true,
+            "level": "warning",
+            "scored": true
+        }
+    ]
+  }
+}
